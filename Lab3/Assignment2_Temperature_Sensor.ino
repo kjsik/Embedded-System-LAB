@@ -3,7 +3,7 @@
 #include <Adafruit_IS31FL3731.h>
 
 #define ISSI_ADDR_DEFAULT 0x74
-#define BEM280_ADDR 0x77
+#define BME280_ADDR 0x77
 Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
 BME280 myBME280;
 static const uint8_t PROGMEM
@@ -20,7 +20,7 @@ smile_bmp[] = // 이모티콘 배열 선언(생성 사이트 참고)
   B00000000
 };
 
-int temp_Threshold = 20;
+int temp_Threshold = 29;
 int humn_threshold = 60;
 
 void setup(){
@@ -40,7 +40,7 @@ void loop(){
   Serial.print("temp : ");
   Serial.print(temp_c);
   Serial.print(", humn : ");
-  Serial.print(humn);
+  Serial.println(humn);
 
   if (temp_c < temp_Threshold && humn < humn_threshold){
       matrix.drawBitmap(0, 0, smile_bmp, 8, 8, 100); 
