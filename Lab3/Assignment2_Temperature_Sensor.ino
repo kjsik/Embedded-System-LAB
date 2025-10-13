@@ -20,7 +20,7 @@ smile_bmp[] = // 이모티콘 배열 선언(생성 사이트 참고)
   B00000000
 };
 
-int temp_Threshold = 29;
+int temp_Threshold = 30;
 int humn_threshold = 60;
 
 void setup(){
